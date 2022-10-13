@@ -1,0 +1,217 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - provide_subscription
+  - inform
+  - music_queries
+  - index_music
+  - index_singer
+  - index_album
+  - query_subscription_information
+  - provide_email
+  - bad_language
+  - request_executive
+  - provide_description
+  - not_help
+  - need_help
+  - support_request_download
+  - support_request_net
+
+
+entities:
+  - subscription
+  - music
+  - email
+  - duration
+  - singer
+  - album
+  - phone
+  - description
+  - need_help
+  - not_help
+
+
+slots:
+  music:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: music
+
+
+
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: email
+
+
+  album:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: album
+
+  singer:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: singer
+
+  phone:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: phone
+
+
+  duration:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: duration
+
+  description:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: description
+
+
+forms:
+  simple_music_form:
+    required_slots:
+      - music
+      - email
+      - duration
+
+  simple_feedback_form:
+    required_slots:
+      - phone
+      - email
+      - description
+
+
+
+
+responses:
+  utter_support_request_download:
+    - text: "Sorry for having a bad use experience. Maybe a network failure, please refresh and try again."
+
+  utter_support_request_net:
+    - text: "Sorry, it may be due to the network, please check your network connection."
+
+  utter_default:
+    - text: "Sorry I didn't get that. Can you rephrase?"
+
+  utter_greet:
+  - text: "Hello, there.So nice of you to bother me. I'm here to help you, because you clearly can't help yourself. Here's what l can do:\n1.Provide subscription schemes\n2.Answer music-related queries\n3.Query subscription information"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_provide_subscription:
+    - text: "No problem. I'll be happy to help you.We have the following subscription schemes:"
+
+  utter_music_slots:
+    - text: "I will subscribe a {music} for you , your email is {email} "
+
+  utter_feedback_slots:
+    - text: "I have helped you to submit feedback, please wait patiently for the executive to contact you"
+
+  utter_ask_continue:
+    - text: "Are you sure you want to stop the subscription ?"
+
+  utter_ask_music:
+    - text: "Which music would you like ?"
+
+  utter_ask_email:
+    - text: "Please provide your email address."
+
+  utter_ask_duration:
+    - text: "How long do you subscribe for ?(1-month/1-year/5-year)"
+
+  utter_ask_phone:
+    - text: "Please provide your phone number."
+
+  utter_ask_description:
+    - text: "Please describe the problem you encountered."
+
+  utter_inform:
+    - text: "I will help you check the music information. Please provide your email address."
+
+  utter_music_queries:
+    - text: "I'd be glad to help you. What information do you want? You need to provide me with the artist name ,or the music name ,or the album name."
+
+  utter_query_subscription_information:
+    - text: "Please tell me your email"
+
+  utter_request_executive:
+    - text: "Don't worry, I will help you contact the management staff to feedback your problems"
+
+
+  utter_bad_language:
+    - text: " It seems that you are really angry, just read the text to feel your mood. Take a deep breath and adjust your mood."
+    - text: "Woo woo, I will be sad, please don't abuse me in this kind of bad language. Next time, I will lose my temper and ignore you oh ~"
+    - text: "I'm sorry, because some of your bad words are so excited, this conversation will end there."
+
+  utter_more_help:
+    - text: "Need help with something else?(Yes/No)"
+
+
+actions:
+  - action_subscription_provide
+  - utter_choose_music
+  - utter_provide_subscription
+  - validate_simple_music_form
+  - validate_simple_feedback_form
+  - utter_music_slots
+  - utter_ask_continue
+  - utter_ask_music
+  - utter_ask_email
+  - utter_ask_description
+  - utter_ask_phone
+  - action_submit_feedback
+  - action_submit_form
+  - utter_ask_duration
+  - action_query_music
+  - action_query_singer
+  - action_query_album
+  - action_query_subscription
+  - utter_request_executive
+  - utter_more_help
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "music",
+    "pattern": "(\\bWe\\ Will\\ Rock\\ You\\b|\\bWe\\ Are\\ The\\ Champions\\b|\\bAnother\\ One\\ Bites\\ the\\ Dust\\b|\\bDragon\\ Attack\\b|\\bRadio\\ Ga\\ Ga\\b|\\bBohemian\\ Rhapsody\\b)"
+  }
+]

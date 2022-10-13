@@ -1,0 +1,7 @@
+{
+  "rule_only_slots": [],
+  "rule_only_loops": [
+    "simple_feedback_form",
+    "simple_music_form"
+  ]
+}

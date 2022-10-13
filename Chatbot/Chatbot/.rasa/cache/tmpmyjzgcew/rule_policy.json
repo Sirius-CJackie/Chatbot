@@ -1,0 +1,71 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_email\"}}]": "action_query_subscription",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_email\"}}, {\"prev_action\": {\"action_name\": \"action_query_subscription\"}, \"user\": {\"intent\": \"provide_email\"}}]": "utter_more_help",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_email\"}}, {\"prev_action\": {\"action_name\": \"action_query_subscription\"}, \"user\": {\"intent\": \"provide_email\"}}, {\"prev_action\": {\"action_name\": \"utter_more_help\"}, \"user\": {\"intent\": \"provide_email\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"not_help\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"not_help\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"not_help\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"need_help\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"need_help\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"need_help\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"music_queries\"}}]": "utter_music_queries",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"music_queries\"}}, {\"prev_action\": {\"action_name\": \"utter_music_queries\"}, \"user\": {\"intent\": \"music_queries\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_album\"}}]": "action_query_album",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_album\"}}, {\"prev_action\": {\"action_name\": \"action_query_album\"}, \"user\": {\"intent\": \"index_album\"}}]": "utter_more_help",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_album\"}}, {\"prev_action\": {\"action_name\": \"action_query_album\"}, \"user\": {\"intent\": \"index_album\"}}, {\"prev_action\": {\"action_name\": \"utter_more_help\"}, \"user\": {\"intent\": \"index_album\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_executive\"}}]": "utter_request_executive",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_executive\"}}, {\"prev_action\": {\"action_name\": \"utter_request_executive\"}, \"user\": {\"intent\": \"request_executive\"}}]": "simple_feedback_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_executive\"}}, {\"prev_action\": {\"action_name\": \"utter_request_executive\"}, \"user\": {\"intent\": \"request_executive\"}}, {\"active_loop\": {\"name\": \"simple_feedback_form\"}, \"prev_action\": {\"action_name\": \"simple_feedback_form\"}, \"user\": {\"intent\": \"request_executive\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_music_form\"}}]": "utter_music_slots",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_music_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_music_slots\"}}]": "action_submit_form",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_music_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_music_slots\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_submit_form\"}}]": "utter_more_help",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_music_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_music_slots\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_submit_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_more_help\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_feedback_form\"}}]": "utter_feedback_slots",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_feedback_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_feedback_slots\"}}]": "action_submit_feedback",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_feedback_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_feedback_slots\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_submit_feedback\"}}]": "utter_more_help",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"simple_feedback_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_feedback_slots\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_submit_feedback\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_more_help\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_music\"}}]": "action_query_music",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_music\"}}, {\"prev_action\": {\"action_name\": \"action_query_music\"}, \"user\": {\"intent\": \"index_music\"}}]": "utter_more_help",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_music\"}}, {\"prev_action\": {\"action_name\": \"action_query_music\"}, \"user\": {\"intent\": \"index_music\"}}, {\"prev_action\": {\"action_name\": \"utter_more_help\"}, \"user\": {\"intent\": \"index_music\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_singer\"}}]": "action_query_singer",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_singer\"}}, {\"prev_action\": {\"action_name\": \"action_query_singer\"}, \"user\": {\"intent\": \"index_singer\"}}]": "utter_more_help",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"index_singer\"}}, {\"prev_action\": {\"action_name\": \"action_query_singer\"}, \"user\": {\"intent\": \"index_singer\"}}, {\"prev_action\": {\"action_name\": \"utter_more_help\"}, \"user\": {\"intent\": \"index_singer\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bad_language\"}}]": "utter_bad_language",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bad_language\"}}, {\"prev_action\": {\"action_name\": \"utter_bad_language\"}, \"user\": {\"intent\": \"bad_language\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"query_subscription_information\"}}]": "utter_query_subscription_information",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"query_subscription_information\"}}, {\"prev_action\": {\"action_name\": \"utter_query_subscription_information\"}, \"user\": {\"intent\": \"query_subscription_information\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_subscription\"}}]": "utter_provide_subscription",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_subscription\"}}, {\"prev_action\": {\"action_name\": \"utter_provide_subscription\"}, \"user\": {\"intent\": \"provide_subscription\"}}]": "action_subscription_provide",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_subscription\"}}, {\"prev_action\": {\"action_name\": \"utter_provide_subscription\"}, \"user\": {\"intent\": \"provide_subscription\"}}, {\"prev_action\": {\"action_name\": \"action_subscription_provide\"}, \"user\": {\"intent\": \"provide_subscription\"}}]": "simple_music_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"provide_subscription\"}}, {\"prev_action\": {\"action_name\": \"utter_provide_subscription\"}, \"user\": {\"intent\": \"provide_subscription\"}}, {\"prev_action\": {\"action_name\": \"action_subscription_provide\"}, \"user\": {\"intent\": \"provide_subscription\"}}, {\"active_loop\": {\"name\": \"simple_music_form\"}, \"prev_action\": {\"action_name\": \"simple_music_form\"}, \"user\": {\"intent\": \"provide_subscription\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "simple_music_form",
+      "simple_feedback_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"utter_request_executive\"}}, {\"active_loop\": {\"name\": \"simple_feedback_form\"}, \"prev_action\": {\"action_name\": \"simple_feedback_form\"}, \"user\": {\"intent\": \"request_executive\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_subscription_provide\"}}, {\"active_loop\": {\"name\": \"simple_music_form\"}, \"prev_action\": {\"action_name\": \"simple_music_form\"}, \"user\": {\"intent\": \"provide_subscription\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "handling active loops and forms - simple_feedback_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bad_language\"}}]",
+      "handling active loops and forms - simple_music_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "predicting default action with intent back",
+      "handling active loops and forms - simple_feedback_form",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bad_language\"}}, {\"prev_action\": {\"action_name\": \"utter_bad_language\"}, \"user\": {\"intent\": \"bad_language\"}}]",
+      "handling active loops and forms - simple_music_form"
+    ]
+  }
+}

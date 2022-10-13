@@ -1,0 +1,107 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: provide subscription
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_subscription
+  - action: utter_provide_subscription
+  - action: action_subscription_provide
+  - action: simple_music_form
+  - active_loop: simple_music_form
+  - active_loop: null
+  - action: utter_music_slots
+  - action: action_submit_form
+  - action: utter_more_help
+
+- story: query music
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: music_queries
+  - action: utter_music_queries
+  - intent: index_music
+  - action: action_query_music
+  - action: utter_more_help
+
+- story: query singer
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: music_queries
+  - action: utter_music_queries
+  - intent: index_singer
+  - action: action_query_singer
+  - action: utter_more_help
+
+- story: query album
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: music_queries
+  - action: utter_music_queries
+  - intent: index_album
+  - action: action_query_album
+  - action: utter_more_help
+
+- story: query subscription information
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: query_subscription_information
+  - action: utter_query_subscription_information
+  - intent: provide_email
+  - action: action_query_subscription
+  - action: utter_more_help
+
+- story: submit feedback
+  steps:
+    - intent: request_executive
+    - action: utter_request_executive
+    - action: simple_feedback_form
+    - active_loop: simple_feedback_form
+    - active_loop: null
+    - action: utter_feedback_slots
+    - action: action_submit_feedback
+    - action: utter_more_help
+
+
+- story: not need help
+  steps:
+    - intent: not_help
+    - action: utter_goodbye
+
+- story: need help
+  steps:
+    - intent: need_help
+    - action: utter_greet

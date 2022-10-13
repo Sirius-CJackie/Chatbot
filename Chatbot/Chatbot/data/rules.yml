@@ -1,0 +1,123 @@
+version: "3.1"
+
+rules:
+
+- rule: Say hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: provide subscription
+  steps:
+  - intent: provide_subscription
+  - action: utter_provide_subscription
+  - action: action_subscription_provide
+  - action: simple_music_form
+  - active_loop: simple_music_form
+
+
+- rule: Submit music from
+  condition:
+    - active_loop: simple_music_form
+  steps:
+    - action: simple_music_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: utter_music_slots
+    - action: action_submit_form
+    - action: utter_more_help
+
+- rule: query music
+  steps:
+    - intent: music_queries
+    - action: utter_music_queries
+
+- rule: query index music
+  steps:
+    - intent: index_music
+    - action: action_query_music
+    - action: utter_more_help
+
+- rule: query index singer
+  steps:
+    - intent: index_singer
+    - action: action_query_singer
+    - action: utter_more_help
+
+- rule: query index album
+  steps:
+    - intent: index_album
+    - action: action_query_album
+    - action: utter_more_help
+
+
+
+- rule: bad language
+  steps:
+    - intent: bad_language
+    - action: utter_bad_language
+
+- rule: query subscription information
+  steps:
+    - intent: query_subscription_information
+    - action: utter_query_subscription_information
+
+
+- rule: provide email
+  steps:
+    - intent: provide_email
+    - action: action_query_subscription
+    - action: utter_more_help
+
+
+- rule: request executive
+  steps:
+    - intent: request_executive
+    - action: utter_request_executive
+    - action: simple_feedback_form
+    - active_loop: simple_feedback_form
+
+
+- rule: Submit feedback from
+  condition:
+    - active_loop: simple_feedback_form
+  steps:
+    - action: simple_feedback_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: utter_feedback_slots
+    - action: action_submit_feedback
+    - action: utter_more_help
+
+
+- rule: No need for help
+  steps:
+    - intent: not_help
+    - action: utter_goodbye
+
+- rule: need for help
+  steps:
+    - intent: need_help
+    - action: utter_greet
+
+- rule: Network problems
+  steps:
+    - intent: support_request_net
+    - action: utter_support_request_net
+
+- rule: Download problems
+  steps:
+    - intent: support_request_download
+    - action: utter_support_request_download

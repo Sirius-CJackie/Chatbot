@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-duration",
+      "2": "I-duration",
+      "3": "L-duration",
+      "4": "U-duration",
+      "5": "B-email",
+      "6": "I-email",
+      "7": "L-email",
+      "8": "U-email",
+      "9": "B-music",
+      "10": "I-music",
+      "11": "L-music",
+      "12": "U-music",
+      "13": "B-singer",
+      "14": "I-singer",
+      "15": "L-singer",
+      "16": "U-singer",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-duration": 1,
+      "I-duration": 2,
+      "L-duration": 3,
+      "U-duration": 4,
+      "B-email": 5,
+      "I-email": 6,
+      "L-email": 7,
+      "U-email": 8,
+      "B-music": 9,
+      "I-music": 10,
+      "L-music": 11,
+      "U-music": 12,
+      "B-singer": 13,
+      "I-singer": 14,
+      "L-singer": 15,
+      "U-singer": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

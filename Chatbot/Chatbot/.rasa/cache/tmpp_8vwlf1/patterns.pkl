@@ -1,0 +1,26 @@
+[
+  {
+    "name": "duration",
+    "pattern": "/^[0-9]*$/"
+  },
+  {
+    "name": "email",
+    "pattern": "/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/"
+  },
+  {
+    "name": "phone",
+    "pattern": "/^[0-9]*$/"
+  },
+  {
+    "name": "music",
+    "pattern": "(\\bWe\\ Will\\ Rock\\ You\\b|\\bWe\\ Are\\ The\\ Champions\\b|\\bAnother\\ One\\ Bites\\ the\\ Dust\\b|\\bDragon\\ Attack\\b|\\bRadio\\ Ga\\ Ga\\b|\\bBohemian\\ Rhapsody\\b)"
+  },
+  {
+    "name": "singer",
+    "pattern": "(\\bqueen\\b)"
+  },
+  {
+    "name": "album",
+    "pattern": "(\\bThe\\ Game\\b|\\bThe\\ Works\\b|\\bGreatest\\ Hits\\b|\\bNews\\ Of\\ The\\ World\\b)"
+  }
+]

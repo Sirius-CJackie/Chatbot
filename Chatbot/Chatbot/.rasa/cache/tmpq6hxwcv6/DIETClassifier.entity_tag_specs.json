@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-email",
+      "2": "I-email",
+      "3": "L-email",
+      "4": "U-email",
+      "5": "B-music",
+      "6": "I-music",
+      "7": "L-music",
+      "8": "U-music",
+      "9": "B-subscription",
+      "10": "I-subscription",
+      "11": "L-subscription",
+      "12": "U-subscription",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-email": 1,
+      "I-email": 2,
+      "L-email": 3,
+      "U-email": 4,
+      "B-music": 5,
+      "I-music": 6,
+      "L-music": 7,
+      "U-music": 8,
+      "B-subscription": 9,
+      "I-subscription": 10,
+      "L-subscription": 11,
+      "U-subscription": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

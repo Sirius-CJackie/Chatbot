@@ -1,0 +1,263 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+
+- intent: provide_subscription
+  examples: |
+    - What free albums do you have?
+    - What albums can I subscribe to?
+    - Could I subscribe?
+    - May I subscribe?
+    - Could you provide subscription schemes for me?
+    - What subscription schemes are available?
+
+- intent : music_queries
+  examples: |
+    - I choose answer music related queries.
+    - I want to know about music.
+    - Can you tell me something about the music?
+    - I choose option 2.
+    - I want to inquire about music.
+
+- intent : index_music
+  examples: |
+    - [We will rock you]{"entity":"music","value":"We Will Rock You"}
+    - I like [We will rock you]{"entity":"music","value":"We Will Rock You"}
+    - What about [We Will Rock You]{"entity":"music","value":"We Will Rock You"}
+
+- intent : index_singer
+  examples: |
+    - [queen]{"entity":"singer","value":"Queen"}
+    - [Queen]{"entity":"singer","value":"Queen"}
+    - what about [queen]{"entity":"singer","value":"Queen"}
+
+- intent : index_album
+  examples: |
+    - [the game]{"entity":"album","value":"The Game"}
+    - [The Game]{"entity":"album","value":"The Game"}
+    - [News Of The World]{"entity":"album","value":"News Of The World"}
+    - [The Works]{"entity":"album","value":"The Works"}
+    - [Greatest Hits]{"entity":"album","value":"Greatest Hits"}
+
+- intent: inform
+  examples: |
+    - My email is [examlpe@example.com]{"entity":"email"}
+    - The mail is [examlpe@example.com]{"entity":"email"}
+    - My email is [123456@gmail.com]{"entity":"email"}
+    - [123456789@qq.com]{"entity":"email"}
+    - I like [We will rock you]{"entity":"music","value":"We Will Rock You"}
+    - What about [We Will Rock You]{"entity":"music","value":"We Will Rock You"}
+    - I like [We Are The Champions]{"entity":"music","value":"We Are The Champions"}
+    - What about [We Are The Champions]{"entity":"music","value":"We Are The Champions"}
+    - I like [Another One Bites the Dust]{"entity":"music","value":"Another One Bites the Dust"}
+    - What about [Another One Bites the Dust]{"entity":"music","value":"Another One Bites the Dust"}
+    - I like [Dragon Attack]{"entity":"music","value":"Dragon Attack"}
+    - What about [Dragon Attack]{"entity":"music","value":"Dragon Attack"}
+    - I like [Radio Ga Ga]{"entity":"music","value":"Radio Ga Ga"}
+    - What about [Radio Ga Ga]{"entity":"music","value":"Radio Ga Ga"}
+     - I like [Bohemian Rhapsody]{"entity":"music","value":"Bohemian Rhapsody"}
+    - What about [Bohemian Rhapsody]{"entity":"music","value":"Bohemian Rhapsody"}
+    - [we will rock you]{"entity":"music","value":"We Will Rock You"}
+    - I want to order a [one]{"entity":"duration","value":"1"} month membership.
+    - I want to order a [1]{"entity":"duration","value":"1"} month membership.
+    - I want to order a [one year]{"entity":"duration","value":"12"} membership.
+    - I want to order a [1 year]{"entity":"duration","value":"12"} month membership.
+    - I want to order a [five year]{"entity":"duration","value":"60"} month membership.
+    - I want to order a [5 year]{"entity":"duration","value":"60"} month membership.
+    - [17737972162]{"entity":"phone"}
+    - [12345678910]{"entity":"phone"}
+    - [What if I don't have email]{"entity":"description"}
+    - [What if I don't have phone]{"entity":"description"}
+    - [Why can't I subscribe]{"entity":"description"}
+    - [I'm having a problem with my subscription]{"entity":"description"}
+    - [There's no music I want to listen to]{"entity":"description"}
+    - [I hate this chatbot]{"entity":"description"}
+    - [I have some questions]{"entity":"description"}
+   
+
+- intent: query_subscription_information
+  examples: |
+    - Query subscription information
+    - I would like to know when my subscription will end
+    
+
+- regex: email
+  examples: |
+      -  /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ 
+- regex: duration
+  examples: |
+    - /^[0-9]*$/
+- regex: phone
+  examples: |
+    - /^[0-9]*$/
+
+- lookup: music
+  examples: |
+    - We Will Rock You
+    - We Are The Champions
+    - Another One Bites the Dust
+    - Dragon Attack
+    - Radio Ga Ga
+    - Bohemian Rhapsody
+
+- lookup: singer
+  examples: |
+    - queen
+
+- lookup: album
+  examples: |
+    - The Game
+    - The Works
+    - Greatest Hits
+    - News Of The World
+
+- synonym: subcription
+  examples: |
+    - subcription
+    - subscription service
+    - subscribe for
+    - subscribe to
+
+- intent: bad_language
+  examples: |
+    - Shut
+    - You are stupid
+    - You are stupid！stupid！stupid！
+    
+- intent: provide_email
+  examples: |
+   - My email is [examlpe@example.com]{"entity":"email"}
+   - The mail is [examlpe@example.com]{"entity":"email"}
+   - [examlpe@example.com]{"entity":"email"}
+   - My email is [123456@gmail.com]{"entity":"email"}
+   - [123456789@qq.com]{"entity":"email"}
+
+- intent: request_executive
+  examples: |
+    - I need help
+    - I'd like to contact customer service
+    - contact excutive
+    - executive
+    - You're wrong.
+    - I want to feedback
+    - I have a problem
+    - feedback
+    - I am very dissatisfied.
+    - Tried it, but it was useless.
+    - it was useless
+
+
+- intent: need_help
+  examples: |
+    - I need help
+    - all right
+    - yes
+    - ok
+
+- intent: not_help
+  examples: |
+    - I need not help
+    - no
+    - no problem
+    - I don't need help
+    - no help
+
+- intent: support_request_download
+  examples: |
+    - Hi, I have subscribed but cannot download songs
+    - cannot download songs
+    - not able to access downloaded content,despite active subscriptions
+
+- intent: support_request_net
+  examples: |
+    - not being able to play any or some tracks
+    - It's stuck
+    - don't work
+    - not work
+    - not play
+    - don't work
